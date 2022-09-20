@@ -56,3 +56,16 @@ code {
   justify-content: space-between;
   align-items: center;
 }
+
+.load-more{
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+.load-more button{
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #eeee;
+  padding: 6px;
+}
