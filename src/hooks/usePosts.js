@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 const BASEURL = "https://dummyjson.com";
@@ -11,10 +12,11 @@ export function usePosts() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const postsUrl = `${BASEURL}/posts?limit=${LIMIT}&skip=${skip}`;
+    const postsUrl = `${BASEURL}/posts`;
+    const params={limit:LIMIT, skip}
     setLoading(true);
-    fetch(postsUrl)
-      .then((res) => res.json())
+    axios.get(postsUrl,{params})
+      .then((res) => res.data)
       .then((res) => {
         setPosts((oldposts) => [...oldposts, ...res.posts]);
         setTotal(res.total);

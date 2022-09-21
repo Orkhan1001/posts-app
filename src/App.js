@@ -1,29 +1,17 @@
-import { usePosts } from "./hooks/usePosts";
-import PostList from "./components/PostList";
-
-
+import React from "react";
+import {Routes, Route, Navigate} from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import PostsPage from "./pages/Postspage";
 
 function App() {
-  const [total, posts, loading, error, loadMore] = usePosts();
 
   return (
     <>
-      <div className="container">
-        <h1 className="section-title">My Personal Blog</h1>
-        <div>
-          <small>Total {total} posts</small>
-          <br />
-          <small>{posts.length} posts</small>
-        </div>
-        {<PostList loading={loading} error={error} posts={posts} />}
-        <div className="load-more">
-          {posts.length < total && (
-            <button disabled={loading} onClick={loadMore}>
-              {loading ?  'Loading...': 'Load More'}
-            </button>
-          )}
-        </div>
-      </div>
+      <Routes>
+        <Route path="/" element={<Navigate to="/login"/>} />
+        <Route path="/login" element={<LoginPage/>} />
+        <Route path="/posts" element={<PostsPage/>} />
+      </Routes>
     </>
   );
 }

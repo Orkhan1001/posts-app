@@ -17,6 +17,16 @@ code {
   margin: 0 auto;
 }
 
+.h-full{
+  height: 100vh;
+}
+
+.flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .section-title{
   text-align: center;
 }
@@ -33,6 +43,39 @@ code {
   margin: 20px;
   padding: 20px;
   color: red;
+}
+
+.login-form{
+  width: 300px;
+}
+
+.login-form .group{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 20px;
+}
+
+.login-form .group input{
+  border-radius: 5px;
+  border: 1px solid #eeee;
+  padding: 6px;
+}
+
+.login-form .group label,
+.login-form .group input{
+  width: 100%;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.login-form button{
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #eeee;
+  padding: 6px;
+  font-weight: bold;
+  width: 100%;
+  display: block;
+  margin-top: 10px;
 }
 
 .post-list .post{
@@ -68,4 +111,5 @@ code {
   border-radius: 5px;
   border: 1px solid #eeee;
   padding: 6px;
+  font-weight: bold;
 }
